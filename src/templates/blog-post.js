@@ -8,10 +8,11 @@ import SEO from "../components/seo"
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const menuItems= data.menuItems.nodes
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} menuItems={menuItems}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -103,5 +104,16 @@ export const pageQuery = graphql`
         title
       }
     }
+    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}}) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+        }
+    }
+  } 
   }
 `
