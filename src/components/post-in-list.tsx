@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 export const PostInList = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
   let featuredImgFluid = post.frontmatter.featured_image?.childImageSharp?.fluid
-
+  let tags = post.frontmatter.tags || []
   return (
     <article
       id={post.id}
@@ -22,8 +22,6 @@ export const PostInList = ({ post }) => {
             <span itemProp="headline">{title}</span>
           </Link>
         </h1>
-
-        <small>{post.frontmatter.date}</small>
       </header>
       <div className="entry-content">
         <section
@@ -31,6 +29,17 @@ export const PostInList = ({ post }) => {
           itemProp="articleBody"
         />
       </div>
+      <footer className="entry-footer">
+        <span className="posted-on">
+          <span className="screen-reader-text">Posted on </span>
+          {post.frontmatter.date}
+        </span>
+        <span className="cat-links">{post.frontmatter.categories}</span>
+        <span className="tags-links">
+          <span className="screen-reader-text">Tags: </span>
+          {tags.join(", ")}
+        </span>
+      </footer>
     </article>
   )
 }
