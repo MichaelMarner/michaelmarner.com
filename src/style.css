@@ -6149,3 +6149,9 @@ p > video {
     padding: 0;
   }
 }
+
+.sidebar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
