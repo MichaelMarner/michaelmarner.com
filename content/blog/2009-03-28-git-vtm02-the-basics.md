@@ -15,17 +15,11 @@ tags:
 
 This video hits up the terminal and starts using git. We start by creating a git repository, which is super easy with Git. Then, we look at adding files to the repository, and commiting changes.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=DmTyoSC7kVk`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=GfGeSwLZhBQ`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=VX6JxXHVze4`
 
 <p style="text-align: left;">
   <strong>Notes</strong>

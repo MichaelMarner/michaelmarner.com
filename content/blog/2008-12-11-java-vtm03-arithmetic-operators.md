@@ -10,6 +10,6 @@ categories:
 
 In this video we look at arithmetic operators, enabling us to do some calculations in our programs.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=avmuzrJr7q8`
+
+`video: https://www.youtube.com/watch?v=ndRep31eC6w`

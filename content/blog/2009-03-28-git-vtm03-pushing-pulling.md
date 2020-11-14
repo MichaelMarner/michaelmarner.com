@@ -10,21 +10,13 @@ categories:
 
 In the last video, we just looked at adding files and commiting changes. This is great, but remember that in Git, commits are local. In this video we look at how we can set up remote repositories that we can push data to, either to use as backups, or for sharing with others.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=hCGredZWCPI`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=SAO_5hyqECM`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=KVy9GCh8bh8`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=11WluEWBKrk`
 
 <p style="text-align: left;">
   <strong>Notes</strong>

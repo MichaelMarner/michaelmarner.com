@@ -10,8 +10,6 @@ categories:
 
 Our first look at objects in Java. There is a lot to cover, so in this video we focus on strings, and how we use methods to manipulate them.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=0_R-3V-mSzo`
 
 <p style="text-align: center;">

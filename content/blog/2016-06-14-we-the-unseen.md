@@ -26,9 +26,7 @@ tags:
 
 I worked for South Australia&#8217;s youth circus organisation [Cirkidz][1] on their production **We The Unseen**. Using the same 3D projection mapping technology I developed at UniSA and expanding from the work I did with Half Real, we built several interactive projection based special effects to compliment the performance. Let&#8217;s have a look at the **Storm**.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://youtu.be/sx-SgKO4Bk0`
 
 So what&#8217;s going on here? We have two Microsoft Kinects, either side of the stage, tracking the performers in 3D. We can then use that information to make projected effects that *respond* to the performers movements.
 
@@ -50,9 +48,7 @@ In fact, if there was more time, we would have tried four devices.
 
 One of the things thought about for Half Real but never got done was using projectors as dynamic light sources. In We The Unseen, we had a chance:
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://youtu.be/3oAcsIMK-68`
 
 It mostly works, but you start to see the limits of the Kinect. No matter how precisely you calibrate, depth errors start to cause misalignment of the projection. There&#8217;s also a bit of a jump when the tracking switches devices. But overall, works pretty good.
 

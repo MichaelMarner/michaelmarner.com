@@ -19,9 +19,7 @@ tags:
 
 This weekend I presented my [paper][1], Augmented Foam Sculpting for Capturing 3D Models, at the International symposium on 3D user interfaces. Since the conference has passed, I have added the video to youtube and the paper to my publications page. First, the video, then some discussion after the jump.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=VPUT2l5JvT0`
 
 ## Foam Sculpting
 

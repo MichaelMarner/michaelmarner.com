@@ -10,9 +10,7 @@ categories:
 format: video
 ---
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=orFfcZ7mDzs`
 
 <!--more-->
 

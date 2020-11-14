@@ -12,6 +12,4 @@ Hey
 
 So over on Youtube someone asked me about doing exponents in Java. I didn&#8217;t talk about this in episode 3 of my Java tutorial, so I have created a short supplementary  video looking at some of the more advanced mathematical functions in Java. Short, and to the point. Here it is:
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=ndRep31eC6w`

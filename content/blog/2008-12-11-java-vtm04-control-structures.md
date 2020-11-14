@@ -10,9 +10,7 @@ categories:
 
 This video looks at control structures. Specifically, if/else blocks and switch blocks. By the end of it you will be able to write programs that make decisions on what to do.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=1GcEN-xl89Y`
 
 **UPDATE:**I just realised I forgot to include [Keyboard.java][1], which is required for this video. It is now uploaded.
 

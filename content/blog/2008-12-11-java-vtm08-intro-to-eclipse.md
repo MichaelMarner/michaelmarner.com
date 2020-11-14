@@ -16,9 +16,7 @@ tags:
 
 This video gives an overview of the Eclipse IDE. Eclipse is a feature packed Java development environment that is also free and open source. In this video we see how we create projects in eclipse and run our programs.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=L4mRNP5QgTE`
 
 <p style="text-align: left;">
   <strong>Notes:</strong>

@@ -15,13 +15,9 @@ tags:
 
 In this episode I give a brief introduction to the Git Version Control System.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=HaSDIdNkCDQ`
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=l5Z2FkdbDDQ`
 
 <p style="text-align: left;">
   <strong>Notes</strong>

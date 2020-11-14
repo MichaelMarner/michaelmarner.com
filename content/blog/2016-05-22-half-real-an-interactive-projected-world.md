@@ -24,9 +24,7 @@ Half Real was a live action, interactive theatre production I worked on with [Th
 
 Half Real is based on a murder investigation, where the live audience votes on how they investigation proceeds. On stage, actors are immersed into a virtual world projected onto the set. Actors were tracked in 3D on set, and the projections reacted to their actions and movements. I built the software that drove the projected content.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://youtu.be/4nowWxi75jE`
 
 I worked on Half Real, building the projection software over a four month period. The system builds on technology I was developing at the University of South Australia during my PhD. The code was all in C++ with OpenGL, running on Linux.
 
@@ -79,7 +77,8 @@ All those scenes meant a lot of media resources. Half Real&#8217;s projected co
 
 Each scene was described in an [XML file][6], which listed the assets required for the scene, transitions and events, etc. A content manager was responsible for freeing data no longer required and loading new assets if required. Assets that were needed in consecutive scenes were reused, rather than reloaded.
 
-<pre lang="cpp">void HalfReal::loadSceneAssets(const vector &assetList) {
+```cpp
+void HalfReal::loadSceneAssets(const vector &assetList) {
     // set all loaded assets to unused...
     foreach (Asset &asset, mLoadedAssets) {
         asset.second-&gt;inScene = false;
@@ -103,7 +102,7 @@ Each scene was described in an [XML file][6], which listed the assets required 
         }
     }
 }
-</pre>
+```
 
 Note the additional flag inUse. Half Real had smooth transitions between scenes. We didn&#8217;t want to delete an asset that was currently be projected, so we left it in RAM until the next transition.
 

@@ -10,8 +10,6 @@ categories:
 
 This video introduces looping. For, While and Do While loops are covered. Finally, a simple way to do repetitive tasks.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=GIx3mfnogQY`
 
 <p style="text-align: center;">

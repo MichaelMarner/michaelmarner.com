@@ -10,8 +10,6 @@ categories:
 
 Our first look at a data structure &#8211; arrays. First we talk about what arrays are, then explain how we can use them with loops to do something useful. We also have a look at the String[] argument to the main method.
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+`video: https://www.youtube.com/watch?v=YTjeGBOlsuc`
 
 <p style="text-align: center;">
