@@ -11,12 +11,12 @@ const Layout = ({ location, title, children, menuItems }) => {
             {children}
           </main>
         </div>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <footer className="site-footer">
+        <div className="site-info">
+          © {new Date().getFullYear()} Michael Marner{" "}
+        </div>
+      </footer>
     </div>
   )
 }

@@ -31,8 +31,10 @@ This article gives a quick overview of how to get setup. The Git repository cont
 
 Add the library to your app&#8217;s pubspec.yaml:
 
-<pre class="wp-block-code"><code lang="yaml" class="language-yaml">dependencies:
-  redux-remote-devtools: ^0.0.4    </code></pre>
+```yaml
+dependencies:
+  redux-remote-devtools: ^0.0.4
+```
 
 And add the middleware to your app, and provide it a reference to your store so time travel actions from the remote can be dispatched:
 

@@ -2,7 +2,7 @@
 title: PhD Thesis
 author: Michael Marner
 type: page
-date: 2020-10-29T20:42:13+00:00
+date: 2013-10-29T20:42:13+00:00
 featured_image: http://www.20papercups.net/wp-content/uploads/2009/10/parchment-e1422921331855-825x510.jpg
 ---
 

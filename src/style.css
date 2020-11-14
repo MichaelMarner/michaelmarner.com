@@ -1022,7 +1022,6 @@ a:focus {
 }
 
 .post-navigation .post-title {
-  font-family: "Noto Serif", serif;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.3333;
@@ -6155,4 +6154,32 @@ p > video {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+}
+
+pre,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 12px;
+}
+
+.nav-previous,
+.nav-next {
+  overflow: hidden;
+  background-color: black;
+}
+.nav-background {
+  position: absolute;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.post-navigation .meta-nav {
+  color: white;
+}
+.post-navigation .post-title {
+  color: white;
+}
+
+.nav-background:hover {
+  opacity: 0.8;
 }

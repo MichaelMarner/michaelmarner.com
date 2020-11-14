@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import {Post} from '../components/post';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -17,49 +18,51 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
+      <Post post={post} />
+      <nav
+        className="navigation post-navigation"
+        role="navigation"
+        aria-label="Posts"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
+        <h2 className="screen-reader-text">Post navigation</h2>
+        <div className="nav-links">
+          {previous && (<div className="nav-previous">
+        {previous.frontmatter.featured_image?.childImageSharp?.fluid && (
+          <div className="nav-background">
+            <Img fluid={previous.frontmatter.featured_image?.childImageSharp?.fluid} />
+          </div>
+        )}
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <span className="meta-nav" aria-hidden="true">
+                Previous
+              </span>{" "}
+              <span className="screen-reader-text">Previous post:</span>{" "}
+              <span className="post-title">
+                {previous.frontmatter.title}
+              </span>
               </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+          </div>
+)}
+          {next && (<div className="nav-next">
+          <div className="nav-background">
+        {next.frontmatter.featured_image?.childImageSharp?.fluid && (
+          <div className="nav-background">
+            <Img fluid={next.frontmatter.featured_image?.childImageSharp?.fluid} />
+          </div>
+        )}
+          </div>
+              <Link to={next.fields.slug} rel="prev">
+              <span className="meta-nav" aria-hidden="true">
+                Next
+              </span>{" "}
+              
+              <span className="screen-reader-text">Next post:</span>{" "}
+              <span className="post-title">
+                {next.frontmatter.title}
+              </span>
+            </Link>
+          </div>)}
+        </div>
       </nav>
     </Layout>
   )
@@ -86,6 +89,15 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        categories
+        tags
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
@@ -94,6 +106,13 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     next: markdownRemark(id: { eq: $nextPostId }) {
@@ -102,6 +121,13 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}}) {
