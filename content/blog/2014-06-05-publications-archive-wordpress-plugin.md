@@ -2,6 +2,7 @@
 title: Publications Archive WordPress Plugin
 author: Michael Marner
 type: post
+draft: true
 date: 2014-06-04T14:06:57+00:00
 slug: /software-projects/publications-archive-wordpress-plugin/
 categories:

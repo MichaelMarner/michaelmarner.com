@@ -25,9 +25,13 @@ export const PostInList = ({ post }) => {
       </header>
       <div className="entry-content">
         <section
-          dangerouslySetInnerHTML={{ __html: post.excerpt }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <h4>Join the conversation!</h4>
+        Hit me up on <a href="https://twitter.com/MichaelMarner">
+          Twitter
+        </a> or <a href="mailto:marner@hey.com">send me an email.</a>
       </div>
       <footer className="entry-footer">
         <span className="posted-on">
