@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
          // Create an array of ids of articles in this category
          ids: result.data.allMarkdownRemark.nodes
            .filter(( node ) => {
-             return node.frontmatter.categories?.includes(category) || false
+             return (node.frontmatter.categories && node.frontmatter.categories.includes(category)) || false
            })
            .map((node) => node.id),
        },
