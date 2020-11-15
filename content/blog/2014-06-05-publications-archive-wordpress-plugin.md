@@ -13,7 +13,7 @@ Do you or your research lab need to maintain a list of publications on your webs
 
 <!--more-->
 
-[<img loading="lazy" class="alignright wp-image-636 size-medium" src="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm-300x194.png" alt="Screen Shot 2014-06-04 at 11.26.44 pm" width="300" height="194" srcset="https://www.20papercups.net/wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm-300x194.png 300w, https://www.20papercups.net/wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm.png 814w" sizes="(max-width: 300px) 100vw, 300px" />][1]The Wearable Computer Lab has a steady stream of publications, which we need to put up on our website. We tried a couple of different approaches that didn&#8217;t really work for us. In the end I put together a WordPress Plugin to keep our Publications list up to date, and we&#8217;re making in available to you!
+[<img loading="lazy" class="alignright wp-image-636 size-medium" src="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm-300x194.png" alt="Screen Shot 2014-06-04 at 11.26.44 pm" width="300" height="194" srcset="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm-300x194.png 300w, ../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.26.44-pm.png 814w" sizes="(max-width: 300px) 100vw, 300px" />][1]The Wearable Computer Lab has a steady stream of publications, which we need to put up on our website. We tried a couple of different approaches that didn&#8217;t really work for us. In the end I put together a WordPress Plugin to keep our Publications list up to date, and we&#8217;re making in available to you!
 
 <a href="https://github.com/WearableComputerLab/WordpressPublications" target="_blank">Publications Archive on Github</a>
 
@@ -21,7 +21,7 @@ Want to see it in action, just have a look at my <a title="Publications" href=".
 
 # Usage
 
-[<img loading="lazy" class="alignright wp-image-634 size-medium" src="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm-300x262.png" alt="Screen Shot 2014-06-04 at 11.23.15 pm" width="300" height="262" srcset="https://www.20papercups.net/wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm-300x262.png 300w, https://www.20papercups.net/wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm.png 776w" sizes="(max-width: 300px) 100vw, 300px" />][2]Once the plugin is installed, you&#8217;ll see **Publications** in the Dashboard. Here you can add publications just like any other WordPress post.
+[<img loading="lazy" class="alignright wp-image-634 size-medium" src="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm-300x262.png" alt="Screen Shot 2014-06-04 at 11.23.15 pm" width="300" height="262" srcset="../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm-300x262.png 300w, ../wp-content/uploads/2014/06/Screen-Shot-2014-06-04-at-11.23.15-pm.png 776w" sizes="(max-width: 300px) 100vw, 300px" />][2]Once the plugin is installed, you&#8217;ll see **Publications** in the Dashboard. Here you can add publications just like any other WordPress post.
 
 There are fields for you to add all the details of the publication, and link to a Youtube video. You can upload a PDF, and use the Featured Image to add a thumbnail that will appear next to the publication details. You can add authors either as plain text, or by referencing WordPress users. This approach would allow you to add author specific publications lists to profiles.
 

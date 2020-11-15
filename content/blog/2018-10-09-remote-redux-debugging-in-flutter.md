@@ -23,7 +23,7 @@ The Javascript world is spoilt with the fantastic [Redux DevTools plugin][1]. It
 
 So why not combine the Redux DevTools from the Javascript world with Redux.dart? Now you can, with the [redux_remote_devtools][3] package!<figure class="wp-block-image">
 
-<img loading="lazy" width="1024" height="632" src="https://www.20papercups.net/wp-content/uploads/2018/10/DartReduxDemo.gif" alt="" class="wp-image-945" /> <figcaption>Debug your Redux Store with Flutter and Remote DevTools</figcaption></figure>
+<img loading="lazy" width="1024" height="632" src="../wp-content/uploads/2018/10/DartReduxDemo.gif" alt="" class="wp-image-945" /> <figcaption>Debug your Redux Store with Flutter and Remote DevTools</figcaption></figure>
 
 This article gives a quick overview of how to get setup. The Git repository contains examples to help get you started.
 
@@ -71,7 +71,7 @@ If your store is simple then you may be using `enum`s for actions. These encode 
 
 If you have configured your app to use the DevToolsStore from `redux_devtools`, then you can time travel through your app state using the UI. <figure class="wp-block-image">
 
-<img loading="lazy" width="1280" height="694" src="https://www.20papercups.net/wp-content/uploads/2018/10/FlutterRemoteDevTimeTravel.gif" alt="" class="wp-image-944" /> <figcaption>Time Travel through your app</figcaption></figure>
+<img loading="lazy" width="1280" height="694" src="../wp-content/uploads/2018/10/FlutterRemoteDevTimeTravel.gif" alt="" class="wp-image-944" /> <figcaption>Time Travel through your app</figcaption></figure>
 
 Remember that there are limitations to time travel, especially if you are using epics or other asynchronous processing with your Redux store.
 

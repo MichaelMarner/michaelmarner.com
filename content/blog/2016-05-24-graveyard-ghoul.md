@@ -58,7 +58,7 @@ So I decided to try building something new, and if it worked out, suggest the st
 
 After hacking away for a couple of nights after work I had enough to leave running for a week playing music non stop. Obscure bugs would mean the radio station would stop broadcasting, and nobody wants to hear silence on their radio. It now runs every night and whenever an announcer doesn&#8217;t show up.<figure id="attachment_820" aria-describedby="caption-attachment-820" style="width: 641px" class="wp-caption aligncenter">
 
-<img loading="lazy" class="wp-image-820 size-full" src="../wp-content/uploads/2016/05/ghoul.png" alt="The graveyard ghoul" width="641" height="668" srcset="https://www.20papercups.net/wp-content/uploads/2016/05/ghoul.png 641w, https://www.20papercups.net/wp-content/uploads/2016/05/ghoul-288x300.png 288w" sizes="(max-width: 641px) 100vw, 641px" /> <figcaption id="caption-attachment-820" class="wp-caption-text">The graveyard ghoul</figcaption></figure>
+<img loading="lazy" class="wp-image-820 size-full" src="../wp-content/uploads/2016/05/ghoul.png" alt="The graveyard ghoul" width="641" height="668" srcset="../wp-content/uploads/2016/05/ghoul.png 641w, ../wp-content/uploads/2016/05/ghoul-288x300.png 288w" sizes="(max-width: 641px) 100vw, 641px" /> <figcaption id="caption-attachment-820" class="wp-caption-text">The graveyard ghoul</figcaption></figure>
 
 ### Interesting bits
 

@@ -161,7 +161,7 @@ Download [unisa.eps][2], and try this yourself. On Ubuntu, I get output that loo
       Click new to create a new environment variable
     </li>
     <li>
-      the key should be set to PATH. The value should be the three directories, separated by colons (:). For example, on my system:<br /> <a href="../wp-content/uploads/2011/06/add-environment-variable.png"><img loading="lazy" class="aligncenter size-full wp-image-402" title="add-environment-variable" src="../wp-content/uploads/2011/06/add-environment-variable.png" alt="" width="453" height="210" srcset="https://www.20papercups.net/wp-content/uploads/2011/06/add-environment-variable.png 453w, https://www.20papercups.net/wp-content/uploads/2011/06/add-environment-variable-300x139.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
+      the key should be set to PATH. The value should be the three directories, separated by colons (:). For example, on my system:<br /> <a href="../wp-content/uploads/2011/06/add-environment-variable.png"><img loading="lazy" class="aligncenter size-full wp-image-402" title="add-environment-variable" src="../wp-content/uploads/2011/06/add-environment-variable.png" alt="" width="453" height="210" srcset="../wp-content/uploads/2011/06/add-environment-variable.png 453w, ../wp-content/uploads/2011/06/add-environment-variable-300x139.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
     </li>
     <li>
       You&#8217;re done! Save the settings and everything should work.

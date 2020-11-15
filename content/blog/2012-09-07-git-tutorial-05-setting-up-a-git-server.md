@@ -14,7 +14,7 @@ tags:
   - ssh
 ---
 
-[<img loading="lazy" class="alignleft size-thumbnail wp-image-354" title="git-logo" src="../wp-content/uploads/2011/03/git-logo-150x150.png" alt="" width="150" height="150" srcset="https://www.20papercups.net/wp-content/uploads/2011/03/git-logo-150x150.png 150w, https://www.20papercups.net/wp-content/uploads/2011/03/git-logo.png 256w" sizes="(max-width: 150px) 100vw, 150px" />][1]Hey
+[<img loading="lazy" class="alignleft size-thumbnail wp-image-354" title="git-logo" src="../wp-content/uploads/2011/03/git-logo-150x150.png" alt="" width="150" height="150" srcset="../wp-content/uploads/2011/03/git-logo-150x150.png 150w, ../wp-content/uploads/2011/03/git-logo.png 256w" sizes="(max-width: 150px) 100vw, 150px" />][1]Hey
 
 So a couple of weeks ago I received an email asking how to go about setting up a Git server on Linux. This is actually pretty straight forward, provided you are familiar with Linux. I made a quick video describing the process.
 
