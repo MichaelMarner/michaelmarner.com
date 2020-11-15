@@ -6195,3 +6195,18 @@ pre[class*="language-"] {
 .social-navigation {
   margin-bottom: 48px;
 }
+
+.citation {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.citation p {
+  margin-left: 16px;
+}
+
+.citation span.gatsby-resp-image-wrapper {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
