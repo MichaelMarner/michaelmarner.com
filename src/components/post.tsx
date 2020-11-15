@@ -6,12 +6,12 @@ export const Post = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
   let featuredImgFluid = post.frontmatter.featured_image?.childImageSharp?.fluid
   let tags = post.frontmatter.tags || []
+  let postClasses = featuredImgFluid
+    ? "post type-post status-publish format-standard hentry has-post-thumbnail"
+    : "post type-post status-publish format-standard hentry"
   return (
     <div>
-      <article
-        id={post.id}
-        className="post-943 post type-post status-publish format-standard has-post-thumbnail hentry category-programming tag-dart tag-flutter tag-redux tag-remote-devtools"
-      >
+      <article id={post.id} className={postClasses}>
         {featuredImgFluid && (
           <div className="post-thumbnail">
             <Img fluid={featuredImgFluid} />
