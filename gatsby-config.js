@@ -9,6 +9,9 @@ module.exports = {
     siteslug: `https://michaelmarner.com/`,
     social: {
       twitter: `MichaelMarner`,
+      github: `MichaelMarner`,
+      email: `marner@hey.com`,
+      linkedin: 'michaelmarner'
     },
   },
   plugins: [

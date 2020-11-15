@@ -9,6 +9,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const menuItems= data.menuItems.nodes
+  const socials = data.socials;
 
   if (posts.length === 0) {
     return (
@@ -25,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle} menuItems={menuItems}>
+    <Layout location={location} title={siteTitle} menuItems={menuItems} socials={socials}>
       <SEO title="All posts" />
         {posts.map(post => {
           return (
@@ -54,6 +55,17 @@ export const pageQuery = graphql`
           frontmatter {
             title
           }
+      }
+    }
+
+    socials: site {
+      siteMetadata {
+        social {
+          twitter
+          github
+          email
+          linkedin
+        }
       }
     }
     allMarkdownRemark(filter: {frontmatter: {type: {ne: "page"}}} sort: { fields: [frontmatter___date], order: DESC }) {

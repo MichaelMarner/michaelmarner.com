@@ -6183,3 +6183,8 @@ pre[class*="language-"] {
 .nav-background:hover {
   opacity: 0.8;
 }
+
+.menu-social-container ul {
+  justify-content: center;
+  display: flex;
+}
