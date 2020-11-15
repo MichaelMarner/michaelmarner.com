@@ -3,7 +3,7 @@ title: PhD Thesis
 author: Michael Marner
 type: page
 date: 2013-10-29T20:42:13+00:00
-featured_image: http://www.20papercups.net/wp-content/uploads/2009/10/parchment-e1422921331855-825x510.jpg
+featured_image: ../../wp-content/uploads/2009/10/parchment-e1422921331855.jpg
 ---
 
 I was awarded the degree of Doctor of Philosophy from the University of South Australia in August 2013 for the thesis **_Physical-Virtual Tools for Interactive Spatial Augmented Reality._**
@@ -16,8 +16,14 @@ Demonstration videos of the work presented in my thesis are listed below.
 
 ### Digital Airbrushing Demonstration
 
+`video: https://youtu.be/0bilGEwQgPo`
+
 ### Augmented Foam Sculpting Demonstration
+
+`video: https://youtu.be/VPUT2l5JvT0`
 
 ### Adaptive Marker Demonstration
 
-[1]: http://www.20papercups.net/wp-content/uploads/2009/10/marner-thesis.pdf
+`video: https://youtu.be/s8m9JAe9fZ0`
+
+[1]: marner-thesis.pdf
