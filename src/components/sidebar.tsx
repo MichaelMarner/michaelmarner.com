@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export const Sidebar = ({ menuItems, socials }) => {
+export const Sidebar = ({ menuItems, socials, categories }) => {
   return (
     <div id="sidebar" className="sidebar">
       <header id="masthead" className="site-header" role="banner">
@@ -78,8 +78,24 @@ export const Sidebar = ({ menuItems, socials }) => {
                 </li>
               )}
             </ul>
-          </div>{" "}
+          </div>
         </nav>
+        <aside className="widget widget_categories">
+          <h2 className="widget-title">Posts</h2>
+          <ul>
+            {categories.map(item => {
+              return (
+                <li className="cat-item">
+                  <Link
+                    to={`/category/${item.toLowerCase().replace(/ /g, "-")}`}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </aside>
       </div>
     </div>
   )

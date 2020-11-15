@@ -7,7 +7,6 @@ excerpt: "Half Real was a live action, interactive theatre production I worked o
 slug: /software-projects/half-real-an-interactive-projected-world/
 featured_image: ../wp-content/uploads/2016/05/Half_Real_09-785x510.jpg
 categories:
-  - Portfolio
   - Software Projects
 tags:
   - c++

@@ -7,7 +7,6 @@ excerpt: "I worked for South Australia's youth circus organisation Cirkidz on th
 slug: /programming/we-the-unseen/
 featured_image: ../wp-content/uploads/2016/06/20150928-IMG_2439-825x510.jpg
 categories:
-  - Portfolio
   - Programming
   - Software Projects
 tags:

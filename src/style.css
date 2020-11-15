@@ -1441,8 +1441,8 @@ img.aligncenter {
 
 .widget-title {
   color: #333;
-  font-family: "Noto Sans", sans-serif;
   margin: 0 0 1.6em;
+  font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -6154,6 +6154,7 @@ p > video {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+  font-family: "Quicksand";
 }
 
 pre,
@@ -6187,4 +6188,10 @@ pre[class*="language-"] {
 .menu-social-container ul {
   justify-content: center;
   display: flex;
+}
+
+.site-header,
+.main-navigation,
+.social-navigation {
+  margin-bottom: 48px;
 }

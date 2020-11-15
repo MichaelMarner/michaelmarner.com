@@ -7,7 +7,6 @@ excerpt: "Software to run Three D Radio's graveyard and vacant timeslots"
 slug: /software-projects/graveyard-ghoul/
 featured_image: ../wp-content/uploads/2016/05/ghoul-cover-815x510.png
 categories:
-  - Portfolio
   - Software Projects
 tags:
   - gstreamer

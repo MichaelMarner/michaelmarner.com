@@ -10,6 +10,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const menuItems= data.menuItems.nodes
   const socials = data.socials;
+  const categories = data.categories.group.map(item => item.fieldValue);
 
   if (posts.length === 0) {
     return (
@@ -26,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle} menuItems={menuItems} socials={socials}>
+    <Layout location={location} title={siteTitle} menuItems={menuItems} socials={socials} categories={categories}>
       <SEO title="All posts" />
         {posts.map(post => {
           return (
@@ -55,6 +56,12 @@ export const pageQuery = graphql`
           frontmatter {
             title
           }
+      }
+    }
+
+    categories:allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}} limit: 2000) {
+      group(field: frontmatter___categories) {
+        fieldValue
       }
     }
 

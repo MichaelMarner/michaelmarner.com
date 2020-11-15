@@ -5,8 +5,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const page = path.resolve(`./src/templates/page.js`)
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const page = path.resolve(`./src/templates/page.tsx`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMarkdownRemark(
           sort: {fields: [frontmatter___date], order: ASC }
+          filter: {frontmatter: {draft: {ne: true}}}
           limit: 1000
         ) {
           nodes {
@@ -23,6 +24,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               type
+              categories
             }
           }
         }
@@ -60,6 +62,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+   // Create array of every category without duplicates
+   const dedupedCategories = dedupeCategories(result.data.allMarkdownRemark)
+   // Iterate over categories and create page for each
+   dedupedCategories.forEach(category => {
+     reporter.info(`Creating page: category/${category}`)
+     createPage({
+       path: `category/${category.toLowerCase().replace(/ /g, '-')}`,
+       component: require.resolve("./src/templates/category-list.tsx"),
+       // Create props for our CategoryList.js component
+       context: {
+         category,
+         // Create an array of ids of articles in this category
+         ids: result.data.allMarkdownRemark.nodes
+           .filter(( node ) => {
+             return node.frontmatter.categories?.includes(category) || false
+           })
+           .map((node) => node.id),
+       },
+     })
+   })
+}
+
+function dedupeCategories(allMarkdownRemark) {
+  const uniqueCategories = new Set()
+  // Iterate over all articles
+  allMarkdownRemark.nodes.forEach(( node ) => {
+    // Iterate over each category in an article
+    node.frontmatter.categories?.forEach(category => {
+      uniqueCategories.add(category)
+    })
+  })
+  // Create new array with duplicates removed
+  return Array.from(uniqueCategories)
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -115,6 +151,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       tags: [String]
+      categories: [String]
     }
 
     type Fields {

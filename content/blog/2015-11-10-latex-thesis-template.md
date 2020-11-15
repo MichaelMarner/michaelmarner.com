@@ -6,7 +6,6 @@ date: 2015-11-10T00:40:20+00:00
 slug: /latex/latex-thesis-template/
 featured_image: ../wp-content/uploads/2015/11/860193_10151303691168663_1864593102_o-825x510.jpg
 categories:
-  - LaTeX
   - Research
 tags:
   - latex

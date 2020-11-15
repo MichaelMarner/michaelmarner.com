@@ -7,7 +7,6 @@ excerpt: "I built an interactive, projection mapped graffiti wall that let audie
 slug: /software-projects/an-interactive-projection-mapped-graffiti-wall/
 featured_image: ../wp-content/uploads/2015/04/graf2-825x510.jpg
 categories:
-  - Portfolio
   - Software Projects
 tags:
   - black

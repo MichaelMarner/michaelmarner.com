@@ -7,7 +7,6 @@ excerpt: Augmented Foam Sculpting is a system that allows designers to sculpt 3D
 slug: /research/augmented-foam-sculpting/
 featured_image: ../wp-content/uploads/2010/03/cutting-e1465894426898-825x510.jpg
 categories:
-  - Portfolio
   - Research
 tags:
   - Augmented Reality
