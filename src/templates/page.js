@@ -85,7 +85,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}}) {
+    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}} sort: { fields: [frontmatter___order], order: ASC}) {
       nodes {
         id
         fields {

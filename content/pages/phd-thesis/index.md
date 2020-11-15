@@ -4,6 +4,7 @@ author: Michael Marner
 type: page
 date: 2013-10-29T20:42:13+00:00
 featured_image: ../../wp-content/uploads/2009/10/parchment-e1422921331855.jpg
+order: 2
 ---
 
 I was awarded the degree of Doctor of Philosophy from the University of South Australia in August 2013 for the thesis **_Physical-Virtual Tools for Interactive Spatial Augmented Reality._**

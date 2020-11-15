@@ -10,7 +10,6 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const menuItems= data.menuItems.nodes
 
-  console.log(data);
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -46,7 +45,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}}) {
+    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}} sort: { fields: [frontmatter___order], order: ASC}) {
         nodes {
           id
           fields {
