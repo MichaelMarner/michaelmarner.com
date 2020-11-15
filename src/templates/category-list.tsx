@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { PostInList } from "../components/post-in-list"
 
-const CategoryList = ({ pageContext: { category }, data }) => {
+const CategoryList = ({ pageContext: { category }, data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const menuItems = data.menuItems.nodes
