@@ -75,7 +75,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {ne: "page"}}} sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(limit: 5 filter: {frontmatter: {type: {ne: "page"}}} sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         html
