@@ -90,9 +90,11 @@ function dedupeCategories(allMarkdownRemark) {
   // Iterate over all articles
   allMarkdownRemark.nodes.forEach(( node ) => {
     // Iterate over each category in an article
-    node.frontmatter.categories?.forEach(category => {
+    if (node.frontmatter.categories) {
+    node.frontmatter.categories.forEach(category => {
       uniqueCategories.add(category)
     })
+    }
   })
   // Create new array with duplicates removed
   return Array.from(uniqueCategories)
