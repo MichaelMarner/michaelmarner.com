@@ -60,7 +60,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
-    })
+   });
+
+    const postsPerPage = 5
+    const numPages = Math.ceil(posts.filter( post => post.frontmatter.type !== 'page').length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/` : `/page/${i}`,
+        component: path.resolve("./src/templates/main-paginated.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i ,
+        },
+      })
+    });
   }
 
    // Create array of every category without duplicates
