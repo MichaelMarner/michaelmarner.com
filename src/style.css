@@ -943,6 +943,9 @@ a:focus {
 .social-navigation a[href$="/feed/"]:before {
   content: "\f413";
 }
+.social-navigation a[href$="/rss.xml"]:before {
+  content: "\f413";
+}
 
 .social-navigation a[href*="path.com"]:before {
   content: "\f219";

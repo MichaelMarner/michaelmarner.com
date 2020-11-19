@@ -77,6 +77,11 @@ export const Sidebar = ({ menuItems, socials, categories }) => {
                   </a>
                 </li>
               )}
+                <li className="menu-item menu-item-type-custom menu-item-object-custom">
+                  <a href="/rss.xml">
+                    <span className="screen-reader-text">Feed</span>
+                  </a>
+                </li>
             </ul>
           </div>
         </nav>
