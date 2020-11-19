@@ -5,6 +5,8 @@ authors:
   - Michael Marner
 summary: We shave 12 minutes off our mobile app build pipeline
 featured_image: mancora.jpg
+categories:
+  - Programming
 tags:
   - Dart
   - Flutter
