@@ -1,0 +1,147 @@
+---
+title: "Improving Flutter's iOS build times on CI"
+date: 2020-11-13T17:17:55+10:30
+authors:
+  - Michael Marner
+summary: We shave 12 minutes off our mobile app build pipeline
+featured_image: mancora.jpg
+tags:
+  - Dart
+  - Flutter
+  - CI
+---
+
+CareApp uses CI to test every commit of our mobile app, and build and deploy every merge to master, for iOS and Android. A few weeks ago I felt very _seen_ by this tweet:
+
+https://twitter.com/jtango18/status/1313395639431032832
+
+What follows was an adventure to cut our CI times by 12 minutes.
+
+[Read all about it on the new CareApp Engineering Blog](https://engineering.careapp.com.au/post/improving-flutter-ios-build-times/)
+
+What follows is a series of optimisations we made to speed up CI. We use [CircleCI](https://circleci.com/), but what follows should apply to any CI service.
+
+## The starting point
+
+A merge to master triggers CI to run tests, build our Android and iOS apps, and deploy to TestFlight and Play Store internal testing. We use Fastlane to manage code signing and deployment.
+
+The full pipeline was taking around 30 minutes, as shown below:
+
+{{< figure src="pipeline-start.png" caption="Our build pipeline">}}
+
+The graph shows the following critical path:
+
+- Test (6:33)
+- Build iOS (15:08)
+- Deploy iOS (8:16)
+
+The android builds are fairly fast and, as we run iOS and Android builds in parallel, don't contribute to the overall pipeline duration.
+
+## Improvement 1: Stop building iOS twice!
+
+If you follow Flutter's [documentation](https://flutter.dev/docs/deployment/cd) for building iOS on CI, you will end up building the iOS app twice:
+
+> On iOS an extra build is required since flutter build builds an .app rather than archiving .ipas for release
+
+So your CI script may look something like this:
+
+```bash
+# install deps
+flutter pub get
+
+# build a non-signed .app
+flutter build ios --release --no-codesign --build-number $BUILD_NUMBER
+
+# sign and deploy with fastlane
+cd ios
+chruby 2.7
+gem install bundler:2.1.4
+bundle install --path vendor/bundle
+
+# install certificates and profiles into CI's keychain
+bundle exec fastlane ios match
+
+# build a signed app
+bundle exec fastlane ios build
+```
+
+The issue is that the iOS app will be build twice! Once during `flutter build`, and again by Fastlane to get a signed IPA.
+
+### This documentation is out of date!
+
+Flutter recently introduced a new argument to `build ios`: `--config-only`. When run with this parameter, `flutter build` _configures_ the XCode project, but does not actually build the .app. Putting that argument in place is trivial:
+
+```bash
+flutter build ios --release --no-codesign --config-only --build-number $BUILD_NUMBER
+```
+
+The rest of the script above stays the same.
+
+Now, `fastlane ios build` is the only time the iOS app is actually compiled, greatly improving build times.
+
+## Improvement 2: Caching rubygems for Fastlane
+
+CircleCI, like most CI services, allow you to [cache dependencies](https://circleci.com/docs/2.0/caching/) between jobs. Usually this is project dependencies, but you should also consider caching your deployment tools.
+
+In our case, Fastlane is required for both the `build_ios` and `deploy_ios` steps. If we could cache Fastlane and its dependencies, we should see an improvement to both build steps.
+
+CircleCI allows you to create several caches, and so we add one for RubyGems:
+
+```yaml
+- restore_cache:
+    keys:
+      - gem-cache-v2-{{ arch }}-{{ .Branch }}-{{ checksum "./ios/Gemfile.lock" }}
+      - gem-cache-v2-{{ arch }}-{{ .Branch }}
+      - gem-cache-v1
+- build_or_deploy
+- save_cache:
+    key: gem-cache-v2-{{ arch }}-{{ .Branch }}-{{ checksum "./ios/Gemfile.lock" }}
+    paths:
+      - ./ios/vendor/bundle
+```
+
+As we'll see, caching RubyGems makes a massive improvement to subsequent build times.
+
+## Improvement 3: Persisting generated files between steps
+
+We use [json_serializable](https://pub.dev/packages/json_serializable) to automatically generate `toJson` and `fromJson` methods on some of our data classes and Redux state. The one downside is we find running `build_runner` is slow (about 2:00 for us). This is compounded by the fact that the generated files are needed in every CI step.
+
+The generated files are _dart_ files, so they should be the same whether generated on Linux or macOS. Therefore, we can generate these once and safely reuse them in later CI steps.
+
+On CircleCI we use Workspaces like so:
+
+```yaml
+- persist_to_workspace:
+    root: .
+    paths:
+      - ./lib/store/*/*.g.dart
+      - ./lib/store/*.g.dart
+```
+
+CircleCI has a limitation that it can't recursively glob files to persist. Therefore, we need to specify all the paths where generated files can be found. Thankfully for us, all our generated files are in a single place in our code.
+
+In subsequent build steps we can restore the workspace. This puts the generated files into place, and our Flutter code will compile.
+
+```yaml
+- attach_workspace:
+    at: .
+```
+
+## 12 Minutes Faster
+
+With those three changes in place, we've taken around 12 minutes off our full build pipeline:
+
+{{< figure src="pipeline-end.png" caption="Our improved build pipeline is 12 minutes faster">}}
+
+As you can see, we get a massive speed increase in build and deploy steps for iOS. Caching the generated dart files also improves building for Android. While this wasn't on the critical path and so doesn't affect the overall time, it does mean that building for Android uses fewer CI credits, which is also good.
+
+### Things we haven't tried
+
+There is probably more we can do to improve this further, here are some things we haven't tried.
+
+- **Caching flutter packages**. We still run `flutter pub get` in each step that needs it. It may be possible to cache the installed flutter packages, but we have not explored that yet.
+
+- **Using larger executors**. The times above use `medium` class MacOS executors for building iOS, and `medium` class Docker executors for the test and Android steps. An easy win is to bump those up to large. Without further investigation though, it is unclear how much of a speed boost this would give, since there is still a lot of time waiting on network resources, rather than CPU. Also our non-master CI steps are simpler. Developers get test feedback in around 4 minutes, which is ok.
+
+Thanks for reading! Please share any neat tricks have you found for making Flutter builds faster.
+
