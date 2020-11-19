@@ -23,8 +23,6 @@ Please note that since writing this tutorial, we now have OpenNI and NITE 2.0, a
 
 To talk to the Kinect, there are two basic parts: OpenNI itself, and a Sensor module that is actually responsible for communicating with the hardware. Then, if you need it, there is NITE, which is another module for OpenNI that does skeletal tracking, gestures, and stuff. Depending on how you plan on using the data from the Kinect, you may not need NITE at all.
 
-[ad]
-
 ### Step 1: Prerequisites
 
 We need to install a bunch of packages for all this to work. Thankfully, the readme file included with OpenNI lists all these. However, to make life easier, this is (as of writing) what you need to install, in addition to all the development packages you (hopefully) already have.
@@ -102,7 +100,3 @@ At some point, you may be asked for a license key. A working license key can be 
 ### Conclusion
 
 After following these steps, you will be able to write programs that use the Microsoft Kinect through OpenNI and NITE middleware. I hope this helps someone, because I spent a lot of time screwing around this morning trying to get it all to work. Like I said, the process is pretty straight forward, it just hasn&#8217;t been written down in one place (or I suck at google).
-
-<p style="text-align: center;">
-  [ad]
-</p>

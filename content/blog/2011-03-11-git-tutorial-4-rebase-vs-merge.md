@@ -18,8 +18,4 @@ After over a year, here&#8217;s the next instalment of my Git tutorial! In this 
 
 <!--more-->
 
-<p style="text-align: center;">
-  [ad]
-</p>
-
 [1]: ../wp-content/uploads/2011/03/git-logo.png

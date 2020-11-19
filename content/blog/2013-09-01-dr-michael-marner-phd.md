@@ -4,7 +4,7 @@ author: Michael Marner
 type: post
 date: 2013-09-01T10:25:53+00:00
 slug: /research/dr-michael-marner-phd/
-featured_image: ../wp-content/uploads/2009/10/parchment-e1422921331855-825x510.jpg
+featured_image: ../wp-content/uploads/2009/10/parchment-e1422921331855.jpg
 categories:
   - Research
 tags:

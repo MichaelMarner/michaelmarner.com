@@ -16,7 +16,3 @@ tags:
 Here&#8217;s the long awaited video on branching in Git. Enjoy!
 
 <!--more-->
-
-&nbsp;
-
-[ad]

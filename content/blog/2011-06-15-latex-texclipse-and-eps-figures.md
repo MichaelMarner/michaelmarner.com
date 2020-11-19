@@ -24,10 +24,6 @@ In newish versions of Latex, if you use the epstopdf package, your images are co
 
 <!--more-->
 
-<p style="text-align: center;">
-  [ad]
-</p>
-
 Lets start with a minimum working example to demonstrate the problem:
 
 <pre lang="latex">\documentclass{minimal}
@@ -180,14 +176,6 @@ Download [unisa.eps][2], and try this yourself. On Ubuntu, I get output that loo
   
   <p>
     Well, I hope that helps someone. Its surprising that this error came up on both of my computers. Searching the internet finds others with the same problem, but as yet no solutions. This post should fix that.
-  </p>
-  
-  <p style="text-align: center;">
-    [ad]
-  </p>
-  
-  <p>
-    &nbsp;
   </p>
 
 [1]: ../wp-content/uploads/2011/06/800px-LaTeX_logo.svg_-e1308095178677.png

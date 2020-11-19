@@ -37,8 +37,4 @@ The basic steps:
 
 Hope that helps a bit!
 
-<p style="text-align: center;">
-  [ad]
-</p>
-
 [1]: ../wp-content/uploads/2011/03/git-logo.png
