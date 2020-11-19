@@ -13,8 +13,14 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle} menuItems={menuItems} socials={socials} categories={categories}>
       <SEO title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+
+      <section className="error-404 not-found">
+				<header className="page-header">
+					<h1 className="page-title">Oops! That page can’t be found.</h1>
+      <p>If you think this is a mistake maybe try contacting me.</p>
+				</header>
+
+			</section>
     </Layout>
   )
 }
