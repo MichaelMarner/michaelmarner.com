@@ -25,7 +25,7 @@ const Layout = ({
       </div>
       <footer className="site-footer">
         <div className="site-info">
-          © {new Date().getFullYear()} Michael Marner{" "}
+          © {new Date().getFullYear()} Michael Marner. Articles, photos and other images licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons</a>, unless otherwise specified. 
         </div>
       </footer>
     </div>
