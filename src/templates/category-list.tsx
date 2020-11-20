@@ -10,6 +10,7 @@ const CategoryList = ({ pageContext: { category }, data, location }) => {
   const menuItems = data.menuItems.nodes
   const socials = data.socials
   const categories = data.categories.group.map(item => item.fieldValue)
+  const cat= data.category.edges[0]?.node;
 
   if (posts.length === 0) {
     return (
@@ -38,7 +39,16 @@ const CategoryList = ({ pageContext: { category }, data, location }) => {
       socials={socials}
       categories={categories}
     >
-      <SEO title="All posts" />
+      <SEO title={`${category} archive`} />
+				<header className="page-header">
+  <h1 className="page-title">{ category}</h1>
+      <p  />
+      { cat && <p 
+      
+            dangerouslySetInnerHTML={{ __html: cat.html }}
+      ></p> }
+				</header>
+
       {posts.map(post => {
         return PostInList((post = { post }))
       })}
@@ -47,7 +57,7 @@ const CategoryList = ({ pageContext: { category }, data, location }) => {
 }
 
 export const query = graphql`
-  query CategoryListQuery($ids: [String]!) {
+  query CategoryListQuery($ids: [String]! $category: String!) {
     allMarkdownRemark(
       filter: { id: { in: $ids } }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -100,6 +110,26 @@ export const query = graphql`
     ) {
       group(field: frontmatter___categories) {
         fieldValue
+      }
+    }
+
+    category: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          type: { eq: "category" }
+          title: { eq: $category}
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            slug
+          }
+        }
       }
     }
 

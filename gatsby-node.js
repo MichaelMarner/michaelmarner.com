@@ -89,6 +89,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
        // Create props for our CategoryList.js component
        context: {
          category,
+         slug:`category/${category.toLowerCase().replace(/ /g, '-')}` ,
          // Create an array of ids of articles in this category
          ids: result.data.allMarkdownRemark.nodes
            .filter(( node ) => {
