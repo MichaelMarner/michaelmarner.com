@@ -14,7 +14,7 @@ export const Post = ({ post }) => {
       <article id={post.id} className={postClasses}>
         {featuredImgFluid && (
           <div className="post-thumbnail">
-            <Img fluid={featuredImgFluid} />
+            <Img fluid={ {...featuredImgFluid, aspectRatio: 6/4} } />
           </div>
         )}
         <header className="entry-header">
