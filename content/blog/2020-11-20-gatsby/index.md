@@ -5,6 +5,7 @@ authors:
   - Michael Marner
 summary: I ditch wordpress
 featured_image: west-theb.jpg
+type: post
 categories:
   - Thoughts
 tags:

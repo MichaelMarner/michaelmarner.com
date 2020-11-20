@@ -4,6 +4,7 @@ date: 2020-11-13T17:17:55+10:30
 authors:
   - Michael Marner
 summary: We shave 12 minutes off our mobile app build pipeline
+type: post
 featured_image: mancora.jpg
 categories:
   - Programming
