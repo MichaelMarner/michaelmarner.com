@@ -19,7 +19,7 @@ Welcome to my new website... That looks exactly like the old one. Over the last 
 
 I've wanted to migrate off Wordpress for a while. Some reasons:
 
-- 35 year old me has way less patience for managing servers in my spare time than 23 year old me.
+- I have less patience for managing servers in my spare time than I used to.
 - I'm paying for a VM that I don't really need. It could be just a couple of cents/month for CloudFront, or host on Netlify for free.
 - I really don't want to do this sysadmin work in my spare time
 
