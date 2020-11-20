@@ -6,6 +6,7 @@ export const PostInList = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
   let featuredImgFluid = post.frontmatter.featured_image?.childImageSharp?.fluid
   let tags = post.frontmatter.tags || []
+  let categories = post.frontmatter.categories || []
   let postClasses = featuredImgFluid
     ? "post type-post status-publish format-standard hentry has-post-thumbnail"
     : "post type-post status-publish format-standard hentry"
@@ -38,7 +39,7 @@ export const PostInList = ({ post }) => {
           <span className="screen-reader-text">Posted on </span>
           {post.frontmatter.date}
         </span>
-        <span className="cat-links">{post.frontmatter.categories.map( (category, index) => {
+        <span className="cat-links">{categories.map( (category, index) => {
           return (
             <span>
             <Link to={`/category/${category.toLowerCase().replace(/ /g, '-')}`}>{category}</Link>{ index < post.frontmatter.categories.length-1 &&  ", "}
