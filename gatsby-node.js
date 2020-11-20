@@ -63,7 +63,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    });
 
     const postsPerPage = 5
-    const numPages = Math.ceil(posts.filter( post => post.frontmatter.type !== 'page').length / postsPerPage)
+    const numPages = Math.ceil(posts.filter( post => post.frontmatter.type === 'post').length / postsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/page/${i}`,

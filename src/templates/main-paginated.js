@@ -129,7 +129,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: $limit
       skip: $skip
-      filter: { frontmatter: { type: { ne: "page" } } }
+      filter: { frontmatter: { type: { eq: "post" } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
