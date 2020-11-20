@@ -17,3 +17,5 @@ tags:
 Sometimes you really just need your users to update their app!
 
 <a href="https://medium.com/nextfaze/mandatory-update-for-your-apps-b99b0d4c36d6" target="_blank" rel="noopener">Have a read over on the NextFaze Blog</a>
+
+<span>\* Photo by <a href="https://unsplash.com/@jakobowens1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jakob Owens</a> on <a href="https://unsplash.com/s/photos/stingray?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>

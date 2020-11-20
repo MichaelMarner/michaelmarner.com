@@ -18,4 +18,4 @@ Over on the work blog, I explain how to get AWS Lambda / Serverless to return bi
 
 <a href="https://medium.com/nextfaze/binary-responses-with-serverless-framework-and-api-gateway-5fde91376b76" target="_blank" rel="noopener">Read on the NextFaze Blog</a>
 
-&nbsp;
+<span>\* Photo by <a href="https://unsplash.com/@danist07?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">贝莉儿 DANIST</a> on <a href="https://unsplash.com/s/photos/ng-jellyfish?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>

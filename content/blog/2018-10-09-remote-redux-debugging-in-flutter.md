@@ -81,6 +81,8 @@ Being a new library there are still things to work out. PRs are welcome if you&#
 
 Now go build something cool with Flutter!
 
+<span>\* Photo by <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/s/photos/jellyfish?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
 [1]: http://extension.remotedev.io/
 [2]: https://pub.dartlang.org/packages/flutter_redux_dev_tools
 [3]: https://github.com/MichaelMarner/dart-redux-remote-devtools

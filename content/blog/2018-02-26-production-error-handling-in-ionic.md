@@ -23,3 +23,5 @@ tags:
 </p>
 
 <a href="https://medium.com/nextfaze/production-error-handling-in-ionic-eb2cc7308867" target="_blank" rel="noopener">Read on the NextFaze Blog</a>
+
+<span>\* Photo by <a href="https://unsplash.com/@kmkr?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kris Mikael Krister</a> on <a href="https://unsplash.com/@kmkr?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
