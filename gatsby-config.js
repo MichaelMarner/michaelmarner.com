@@ -87,15 +87,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `G-ZM84KNB5YP`,
+        trackingId: `UA-4400236-2`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Michael Marner's Website`,
+        short_name: `Michael Marner`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
