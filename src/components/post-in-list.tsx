@@ -38,7 +38,13 @@ export const PostInList = ({ post }) => {
           <span className="screen-reader-text">Posted on </span>
           {post.frontmatter.date}
         </span>
-        <span className="cat-links">{post.frontmatter.categories}</span>
+        <span className="cat-links">{post.frontmatter.categories.map( (category, index) => {
+          return (
+            <span>
+            <Link to={`/category/${category.toLowerCase().replace(/ /g, '-')}`}>{category}</Link>{ index < post.frontmatter.categories.length-1 &&  ", "}
+            </span>
+          );
+        })}</span>
         <span className="tags-links">
           <span className="screen-reader-text">Tags: </span>
           {tags.join(", ")}
