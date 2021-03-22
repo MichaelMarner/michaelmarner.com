@@ -2,7 +2,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
@@ -13,8 +13,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
-          sort: {fields: [frontmatter___date], order: ASC }
-          filter: {frontmatter: {draft: {ne: true}}}
+          sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { draft: { ne: true } } }
           limit: 1000
         ) {
           nodes {
@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               type
               categories
+              slug
             }
           }
         }
@@ -53,17 +54,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: post.fields.slug,
-        component: post.frontmatter.type == 'page' ? page : blogPost,
+        component: post.frontmatter.type == "page" ? page : blogPost,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
         },
       })
-   });
+      if (post.frontmatter.slug) {
+        createRedirect({
+          fromPath: post.frontmatter.slug,
+          toPath: post.fields.slug,
+          redirectInBrowser: true,
+          isPermanent: true,
+        })
+      }
+    })
 
     const postsPerPage = 5
-    const numPages = Math.ceil(posts.filter( post => post.frontmatter.type === 'post').length / postsPerPage)
+    const numPages = Math.ceil(
+      posts.filter(post => post.frontmatter.type === "post").length /
+        postsPerPage
+    )
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/page/${i}`,
@@ -72,44 +84,48 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i ,
+          currentPage: i,
         },
       })
-    });
+    })
   }
 
-   // Create array of every category without duplicates
-   const dedupedCategories = dedupeCategories(result.data.allMarkdownRemark)
-   // Iterate over categories and create page for each
-   dedupedCategories.forEach(category => {
-     reporter.info(`Creating page: category/${category}`)
-     createPage({
-       path: `category/${category.toLowerCase().replace(/ /g, '-')}`,
-       component: require.resolve("./src/templates/category-list.tsx"),
-       // Create props for our CategoryList.js component
-       context: {
-         category,
-         slug:`category/${category.toLowerCase().replace(/ /g, '-')}` ,
-         // Create an array of ids of articles in this category
-         ids: result.data.allMarkdownRemark.nodes
-           .filter(( node ) => {
-             return (node.frontmatter.categories && node.frontmatter.categories.includes(category)) || false
-           })
-           .map((node) => node.id),
-       },
-     })
-   })
+  // Create array of every category without duplicates
+  const dedupedCategories = dedupeCategories(result.data.allMarkdownRemark)
+  // Iterate over categories and create page for each
+  dedupedCategories.forEach(category => {
+    reporter.info(`Creating page: category/${category}`)
+    createPage({
+      path: `category/${category.toLowerCase().replace(/ /g, "-")}`,
+      component: require.resolve("./src/templates/category-list.tsx"),
+      // Create props for our CategoryList.js component
+      context: {
+        category,
+        slug: `category/${category.toLowerCase().replace(/ /g, "-")}`,
+        // Create an array of ids of articles in this category
+        ids: result.data.allMarkdownRemark.nodes
+          .filter(node => {
+            return (
+              (node.frontmatter.categories &&
+                node.frontmatter.categories.includes(category)) ||
+              false
+            )
+          })
+          .map(node => node.id),
+      },
+    })
+  })
 }
 
 function dedupeCategories(allMarkdownRemark) {
   const uniqueCategories = new Set()
   // Iterate over all articles
-  allMarkdownRemark.nodes.forEach(( node ) => {
+  allMarkdownRemark.nodes.forEach(node => {
     // Iterate over each category in an article
     if (node.frontmatter.categories) {
-    node.frontmatter.categories.forEach(category => {
-      uniqueCategories.add(category)
-    })
+      node.frontmatter.categories.forEach(category => {
+        uniqueCategories.add(category)
+      })
     }
   })
   // Create new array with duplicates removed
