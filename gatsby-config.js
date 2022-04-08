@@ -10,8 +10,8 @@ module.exports = {
     social: {
       twitter: `MichaelMarner`,
       github: `MichaelMarner`,
-      email: `marner@hey.com`,
-      linkedin: 'michaelmarner'
+      email: `marner@fastmail.com`,
+      linkedin: "michaelmarner",
     },
   },
   plugins: [
@@ -57,11 +57,12 @@ module.exports = {
               noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
               urlOverrides: [
                 {
-                  id: 'youtube',
-                  embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-                }
-              ] 
-            }
+                  id: "youtube",
+                  embedURL: videoId =>
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
+              ],
+            },
           },
           {
             resolve: `gatsby-remark-images`,
