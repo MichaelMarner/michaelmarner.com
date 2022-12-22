@@ -47,6 +47,13 @@ export const Sidebar = ({ menuItems, socials, categories }) => {
                   </a>
                 </li>
               )}
+              {socials.mastodon && (
+                <li className="menu-item menu-item-type-custom menu-item-object-custom mastodon">
+                  <a rel="me" href={`${socials.mastodon}`}>
+                    <span className="screen-reader-text">Mastodon</span>
+                  </a>
+                </li>
+              )}
               {socials.youtube && (
                 <li className="menu-item menu-item-type-custom menu-item-object-custom">
                   <a
@@ -77,11 +84,11 @@ export const Sidebar = ({ menuItems, socials, categories }) => {
                   </a>
                 </li>
               )}
-                <li className="menu-item menu-item-type-custom menu-item-object-custom">
-                  <a href="/rss.xml">
-                    <span className="screen-reader-text">Feed</span>
-                  </a>
-                </li>
+              <li className="menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="/rss.xml">
+                  <span className="screen-reader-text">Feed</span>
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

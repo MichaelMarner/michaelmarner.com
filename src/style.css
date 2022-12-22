@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Quicksand:wght@400;600;700&display=swap");
 @import url("/genericons/genericons.css");
+@import url("/fontawesome/css/brands.css");
 
 /*
 Theme Name: Twenty Fifteen
@@ -926,6 +927,10 @@ a:focus {
 
 .social-navigation a[href*="youtube.com"]:before {
   content: "\f213";
+}
+.social-navigation .mastodon a:before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f4f6";
 }
 
 .social-navigation a[href*="mailto:"]:before {

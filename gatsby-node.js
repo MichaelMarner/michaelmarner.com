@@ -173,6 +173,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       youtube: String
       linkedin: String
       email: String
+      mastodon: String
     }
 
     type MarkdownRemark implements Node {

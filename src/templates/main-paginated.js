@@ -53,29 +53,26 @@ const BlogIndex = ({ data, location, pageContext }) => {
         <h2 className="screen-reader-text">Posts navigation</h2>
         <div className="nav-links">
           {pageContext.currentPage === 1 && (
-            <a
-              className="prev page-numbers"
-              href="/"
-            >
+            <a className="prev page-numbers" href="/">
               Previous page
             </a>
           )}
           {pageContext.currentPage > 1 && (
             <a
               className="prev page-numbers"
-              href={`/page/${pageContext.currentPage -1 }`}
+              href={`/page/${pageContext.currentPage - 1}`}
             >
               Previous page
             </a>
           )}
 
-          {pageContext.currentPage < pageContext.numPages-1 && (
-          <a
-            className="next page-numbers"
-              href={`/page/${pageContext.currentPage +1 }`}
-          >
-            Next page
-          </a>
+          {pageContext.currentPage < pageContext.numPages - 1 && (
+            <a
+              className="next page-numbers"
+              href={`/page/${pageContext.currentPage + 1}`}
+            >
+              Next page
+            </a>
           )}
         </div>
       </nav>
@@ -123,6 +120,7 @@ export const pageQuery = graphql`
           github
           email
           linkedin
+          mastodon
         }
       }
     }

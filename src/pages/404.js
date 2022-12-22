@@ -6,21 +6,26 @@ import SEO from "../components/seo"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const menuItems= data.menuItems.nodes
-  const socials = data.socials;
-  const categories = data.categories.group.map(item => item.fieldValue);
+  const menuItems = data.menuItems.nodes
+  const socials = data.socials
+  const categories = data.categories.group.map(item => item.fieldValue)
 
   return (
-    <Layout location={location} title={siteTitle} menuItems={menuItems} socials={socials} categories={categories}>
+    <Layout
+      location={location}
+      title={siteTitle}
+      menuItems={menuItems}
+      socials={socials}
+      categories={categories}
+    >
       <SEO title="404: Not Found" />
 
       <section className="error-404 not-found">
-				<header className="page-header">
-					<h1 className="page-title">Oops! That page can’t be found.</h1>
-      <p>If you think this is a mistake maybe try contacting me.</p>
-				</header>
-
-			</section>
+        <header className="page-header">
+          <h1 className="page-title">Oops! That page can’t be found.</h1>
+          <p>If you think this is a mistake maybe try contacting me.</p>
+        </header>
+      </section>
     </Layout>
   )
 }
@@ -34,7 +39,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    menuItems: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}} sort: { fields: [frontmatter___order], order: ASC}) {
+    menuItems: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "page" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
       nodes {
         id
         fields {
@@ -43,24 +51,28 @@ export const pageQuery = graphql`
         frontmatter {
           title
         }
-    }
-  }
-
-  categories:allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}} limit: 2000) {
-    group(field: frontmatter___categories) {
-      fieldValue
-    }
-  }
-
-  socials: site {
-    siteMetadata {
-      social {
-        twitter
-        github
-        email
-        linkedin
       }
     }
-  }
+
+    categories: allMarkdownRemark(
+      filter: { frontmatter: { draft: { ne: true } } }
+      limit: 2000
+    ) {
+      group(field: frontmatter___categories) {
+        fieldValue
+      }
+    }
+
+    socials: site {
+      siteMetadata {
+        social {
+          twitter
+          github
+          email
+          linkedin
+          mastodon
+        }
+      }
+    }
   }
 `

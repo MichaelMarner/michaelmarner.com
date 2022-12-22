@@ -10,8 +10,9 @@ module.exports = {
     social: {
       twitter: `MichaelMarner`,
       github: `MichaelMarner`,
-      email: `marner@fastmail.com`,
+      email: `michael@20papercups.net`,
       linkedin: "michaelmarner",
+      mastodon: "https://aus.social/@Marner",
     },
   },
   plugins: [
